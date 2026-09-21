@@ -2,15 +2,15 @@ import cv2
 import matplotlib.pyplot as plt
 
 # Read images
-img1 = cv2.imread("image1.jpg")
-img2 = cv2.imread("image2.jpg")
+img1 = cv2.imread("image.jpg")
+img2 = cv2.imread("image.jpg")
 
 if img1 is None:
-    print("Error: image1.jpg not found")
+    print("Error: image.jpg not found")
     exit()
 
 if img2 is None:
-    print("Error: image2.jpg not found")
+    print("Error: image.jpg not found")
     exit()
 
 # Convert images to grayscale
@@ -29,8 +29,8 @@ sift = cv2.SIFT_create()
 kp1_sift, des1_sift = sift.detectAndCompute(gray1, None)
 kp2_sift, des2_sift = sift.detectAndCompute(gray2, None)
 
-print("SIFT Keypoints in Image 1:", len(kp1_sift))
-print("SIFT Keypoints in Image 2:", len(kp2_sift))
+print("SIFT Keypoints in Image :", len(kp1_sift))
+print("SIFT Keypoints in Image :", len(kp2_sift))
 
 
 # Create FLANN matcher for SIFT
